@@ -108,7 +108,6 @@ void InGame::UpDate(const int WindowWidth, const int WindowHeight, char* k, char
 				e->setState(State::DEADENTER);
 			}
 		}
-		Novice::ScreenPrintf(0, 20, "%d", m_player->getHp());
 		if (e->getState() == State::DEAD)//敵の消す処理
 		{
 			it = m_enemy.erase(it);
@@ -130,6 +129,7 @@ void InGame::Draw()
 	for (const auto& e : m_enemy) {
 		e->Draw();
 	}
+	Novice::ScreenPrintf(0, 20, "player hp : %d", m_player->getHp());
 
 }
 Over::Over()

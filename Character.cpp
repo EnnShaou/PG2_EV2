@@ -95,17 +95,17 @@ void player::UpDate(const int WindowWidth, const int WindowHeight, char* k, char
 		}
 	}
 	//移動
-	if (k[DIK_W])
+	if (k[DIK_W] && m_pos.y > 0.f + m_size.y)
 	{
 		m_pos.y -= m_vel.y;
-	}if (k[DIK_S])
+	}if (k[DIK_S] && m_pos.y < WindowHeight - m_size.x)
 	{
 		m_pos.y += m_vel.y;
 
-	}if (k[DIK_A])
+	}if (k[DIK_A] && m_pos.x > 0.f + m_size.x)
 	{
 		m_pos.x -= m_vel.x;
-	}if (k[DIK_D])
+	}if (k[DIK_D] && m_pos.x < WindowWidth - m_size.x)
 	{
 		m_pos.x += m_vel.x;
 	}
